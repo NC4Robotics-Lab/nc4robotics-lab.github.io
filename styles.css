@@ -50,3 +50,25 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
 }
+
+.team-member {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.team-member img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.team-member .bio {
+  max-width: 800px;
+}
+
+.bio p {
+  margin: 5px 0;
+}
+
