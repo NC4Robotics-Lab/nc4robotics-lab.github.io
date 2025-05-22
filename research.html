@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NC4Robotics-Lab | Research</title>
   <link rel="stylesheet" href="styles.css">
+ <style>
+    .sub-project {
+      margin-bottom: 30px;
+    }
+    .sub-project img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 10px;
+    }
+    .sub-project-description {
+      font-style: normal;
+      text-align: justify;
+      margin-top: 5px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -22,11 +38,54 @@
 
   <main>
     <h2>Neuromorphic Computing for Marine Robots</h2>
-    <ul>
-      <li>SNN-based visibity enhancement of underwater scenes</li>
-      <li>Hybrid CNN-SNN based multimodal pose estimation of underwater vehicles</li>
-      <!-- …etc… -->
-    </ul>
+    <div class="sub-project">
+      <p><strong><em>SNN-based Visibility Enhancement of Underwater Scenes</em></strong></p>
+      <img src="images/uie_snn.png" alt="UIE-SNN">
+      <p class="sub-project-description">We introduce UIE-SNN, the first spiking neural network (SNN)-based underwater image enhancement (UIE) algorithm to improve the overall visibility of underwater images. UIE-SNN is a 19- layered convolutional spiking encoder-decoder framework with skip connections, directly trained using surrogate gradient-based backpropagation through time (BPTT) strategy. We explore and validate the impact of training datasets on energy reduction, a unique advantage of the UIE-SNN architecture over conventional learning-based architectures, where energy consumption is model-dependent. UIE-SNN optimizes the loss function in latent space representation to reconstruct clear underwater images. Our algorithm demonstrates equivalent performance with its non-spiking counterpart methods in terms of PSNR and structural similarity index (SSIM) at reduced timesteps of 5 and energy consumption of 85%. The algorithm is trained on two publicly available benchmark datasets, UIEB and EUVP, and tested on unseen images from UIEB, EUVP, LSUI, U45, and our custom UIE dataset. Compared with the existing state-of-the-art UIE methods, UIE-SNN achieves an average of 6.5× improvement in energy efficiency. The main contributions are:</p>
+  <ul>
+    <li>Proposed UIE-SNN, the first directly trained convolutional SNN framework for UIE tasks</li>
+    <li>Achieved comparable performance with its non-spiking counterpart (CNN-based) with 85% less energy.</li>
+    <li>Demonstrated average improvement of 6.5× in energy efficiency compared to the existing UIE methods.</li>
+    <li>Analyzed the impact of data representation on energy efficiency in UIE-SNN.</li>
+    <li>Explored how neuronal parameter selection affects UIE-SNN performance.</li>
+  </ul>
+  <p><a href="https://arxiv.org/abs/2503.20485" target="_blank">Read the related article for more details.</a></p>
+    </div>
+
+    <div class="sub-project">
+      <p><strong><em>Spiking Transformer with Adaptive Threshold Mechanism for Underwater Image Dehazing</em></strong></p>
+      <img src="images/snntrans.png" alt="snnTrans-DHZ">
+      <p class="sub-project-description">We introduce snnTrans-DHZ, the first spiking transformer with learnable threshold based underwater image dehazing algorithm with only 0.56M parameters to improve the visibility of underwater images.  sing the temporal dynamics of SNNs, snnTrans-DHZ efficiently processes time-dependent raw image sequences while maintaining low power consumption. The raw underwater images are first converted into time-dependent image sequences by repeatedly passing the static image to a user-defined timestep value. The RGB sequences are then converted into LAB color space representations and processed simultaneously. The architecture integrates three primary modules:(i) K estimator module to extract features from different color space representations, (ii) Background light estimator module to jointly estimate the background light component from the RGB-LAB color space representations, and (iii) soft image reconstruction module to reconstruct the haze-free, visibility-enhanced image. snnTrans-DHZ model is directly trained using surrogate gradient-based backpropagation through time (BPTT) strategy. In this research, a combined loss function is designed and used. Our model is trained and tested on the UIEB and EUVP, the two publicly available benchmark dataset for image dehazing. Our algorithm achieves a PSNR and SSIM of 21.6773 dB and 0.8795 on UIEB dataset, and 23.4562 dB and 0.8439 on EUVP dataset respectively. snnTrans-DHZ algorithm achieves this algorithmic performance with fewer operations (7.42 GSOPs) and lower energy consumption of 0.0151 J compared to existing state-of-the-art image enhancement methods.  Compared with the existing state-of-the-art lightest UIE method, our proposed algorithm achieves an average of 3.3× improvement in energy efficiency. The main contributions are:</p>
+<ul>
+    <li>Proposed snnTrans-DHZ algorithm, the first spiking transformer with learnable threshold framework for underwater image dehazing with only 0.56M parameters.</li>
+    <li>Formulated a custom loss function tailored specifically for underwater image dehazing tasks.</li>
+    <li>Explored the hybrid RGB-LAB color space transformations and its conversion to spike-based representations for the first time for developing a domain-aware haze removal approach.</li>
+    <li>Demonstrated an improvement of 3.3× to 62.6× in energy efficiency compared to the existing vision transformer-based UIE methods.</li>
+  </ul>
+  <p><a href="https://arxiv.org/abs/2504.11482" target="_blank">Read the related article for more details.</a></p>
+    </div>
+
+    <div class="sub-project">
+      <p><strong><em>Hybrid CNN-SNN based algorithm for multimodal pose estimation of underwater vehicles</em></strong></p>
+      <img src="images/neurovio.png" alt="NeuroVIO">
+      <p class="sub-project-description"> We present NeuroVIO, a hybrid end-to-end architecture that integrates convolutional neural networks (CNNs) and spiking neural networks (SNNs) for multimodal visual-inertial odometry in underwater mobile robots. Accurate pose estimation is critical for underwater robotics and exploration. In NeuroVIO, CNNs extract visual features from consecutive image frames, which are transformed into time-dependent sequences. These sequences are then processed using adaptive leaky-integrate-and-fire neurons with learnable thresholds to generate spike representations. Simultaneously, inertial measurements captured between frames are fed to an SNN-based feature extractor. The visual and inertial features are then fused and passed through an LSTM network to capture temporal dynamics, followed by an SNN-based regression head to estimate the relative pose of the vehicle. NeuroVIO leverages both CNNs and SNNs to provide comparable pose estimation accuracy while introducing sparsity in feature representations to reduce computational complexity.</p>
+<ul>
+    <li>Developed an end-to-end trainable model based on the hybrid CNN-SNN framework for multimodal pose estimation in underwater environments.</li>
+    <li>Enable direct optimization of the integrated system by training the hybrid model as a unified framework, simplifying the overall training pipeline.</li>
+    <li>Utilizes ALIF neurons to convert continuous visual features into sparse spike representations, significantly reducing computational complexity.</li>
+  </ul>
+  <p><a href="https://ieeexplore.ieee.org/document/10979088" target="_blank">Read the related article for more details.</a></p>
+    </div>
+
+<div class="sub-project">
+      <p><strong><em>SNN-based controller for Underwater Vehicles</em></strong></p>
+      <p class="sub-project-description"> </p>
+<ul>
+    <li></li>
+  </ul>
+  <p><a href="" target="_blank"></a></p>
+    </div>
+
   </main>
 
   <main>
