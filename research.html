@@ -90,12 +90,24 @@
 
   <main>
     <h2>Neuromorphic Computing for Olfaction Sensing Robots</h2>
-    <ul>
-      <li>SNN-based classification of different odours</li>
-      <li>SNN-based concentration estimation of different odors</li>
-      <li>STDP-based ordour source localization</li>
-      <!-- …etc… -->
-    </ul>
+    <div class="sub-project">
+      <p><strong><em>SNN Based Odor Classification and Concentration Estimation </em></strong></p>
+      <img src="images/odor_class.jpg" alt="odor_class">
+      <p class="sub-project-description">This study introduces a hybrid approach for odor classification and quantification in the presence of drift. Our proposed approach employs neuromorphic principles for energy efficient operation along with the probabilistic nature of Bayesian learning for robust outcomes. Our model demonstrates superior performance compared to non-neuromorphic methods. The neuromorphic classification component of this research was initially presented at the IEEE International Conference on Robotics and Automation (ICRA) 2024. Building upon that foundation, this paper expands our previous work by integrating concentration estimation using a spike based regression method and further refining the model’s performance evaluation across various scenarios. Moreover, a robustness analysis of the proposed architecture under adversarial attack in comparison with a non-spiking algorithm is also carried out in this paper. Our work introduces several key innovations aimed at enhancing robustness, accuracy, and energy efficiency in olfactory sensing for autonomous robotics. Our classification model integrates a spike-based convolutional neural network (SCNN) for drift-independent feature extraction, which achieves domain-independent drift compensation. This CNN-driven feature extraction is complemented by a Bayesian classifier, which leverages Kullback-Leibler (KL) divergence to handle non-linear sensor response variability, significantly strengthening classification robustness. For efficient and accurate chemical concentration estimation, we introduce a non-linear SNN regression model that operates independently of chemical categories, streamlining quantification by relying solely on resistance values. We analyze the system’s computation energy requirements to assess its efficiency in comparison to non-spiking approaches. Additionally, we evaluate the model’s resilience against adversarial attacks, specifically using the fast gradient sign method (FGSM), demonstrating enhanced robustness compared to traditional CNNs.</p>
+  <p><a href="https://ieeexplore.ieee.org/abstract/document/10611648" target="_blank">Read the related article for more details.</a></p>
+    </div>
+
+<div class="sub-project">
+      <p><strong><em>Bio Inspired Home Localization</em></strong></p>
+      <img src="images/home_loc.jpg" alt="home_loc">
+      <p class="sub-project-description">In this model, we implement the home localization algorithm proposed earlier for frame-based cameras with conventional neural networks. However, we extend this framework by replacing frame-based images with event-based input and substituting the conventional convolutional neural networks with spiking convolutional neural networks (spiking CNNs). Moreover, the simulation environment is developed in ISAAC Sim on a digital twin of the Khalifa University SAN Campus. The quadrotor model used for localization tasks is adopted from the Pegasus Simulator, ensuring a realistic and dynamic testing ground for our approach. In the proposed system, event-based sensors capture changes in the environment to create spatiotemporal patterns, which are processed using spiking neural networks trained to identify key features and spatial cues within the home. This bio-inspired methodology offers several advantages, including efficient computation, robustness to noise, and adaptability to changing environmental conditions. Simulated environments provide an ideal testing ground for developing and validating the system, allowing controlled experimentation and benchmarking against traditional methods. Through this work, we demonstrate the potential of bioinspired technologies to revolutionize localization systems, paving the way for their adoption in autonomous robots, assistive technologies, and energy-efficient smart home systems. The primary contributions of this work are: </p>
+<ul>
+    <li>Setting up a simulation environment containing SAN campus digital twin and a quadrotor.</li>
+    <li>Event-Driven Visual Sensing: Our system employs event-based cameras to mimic the asynchronous change driven sensing of insect eyes, offering robustness to changes in lighting and dynamic environments.</li>
+    <li>Spiking Neural Network for Homing Vector Estimation: We employ an S-CNN to process event-driven data, where the neural architecture mimics the spike-driven computation observed in biological neurons. </li>
+  </ul>
+  <p><a href="https://ieeexplore.ieee.org/document/10979075" target="_blank">Read the related article for more details.</a></p>
+    </div>
   </main>
 
 <main>
