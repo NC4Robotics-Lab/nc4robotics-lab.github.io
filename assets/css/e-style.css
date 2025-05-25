@@ -1,0 +1,247 @@
+.page-wrapper {
+    user-select: none;
+}
+
+.dropdown a p {
+    max-width: 80%;
+}
+
+.main-slider-two .container {
+    padding-top: 200px;
+    padding-bottom: 50px;
+}
+
+.main-menu-two__logo{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.main-menu-two__logo img {
+    max-height: 50px;
+}
+
+.main-menu-two__main-menu-box .shadow-box li a {
+}
+
+.main-menu-two__main-menu-box .shadow-box li a span {
+    color: var(--accent-color);
+    font-weight: 500;
+    font-size: 0.5rem;
+}
+
+.why-choose-two {
+    padding: 50px 0 25px;
+}
+
+.blog-page {
+    padding: 50px 0;
+}
+
+.why-choose-two__img::before {
+    background: rgb(17, 30, 70);
+    background: linear-gradient(0deg, rgba(17, 30, 70, 1) 23%, rgba(17, 30, 70, 0) 100%);
+}
+
+#ResearchPage .container.content,
+    #teamPage #teamPageWrapper {
+    margin-top: 200px;
+}
+
+@media (max-width: 1200px) {
+    #ResearchPage .container.content,
+    #teamPage #teamPageWrapper {
+        margin-top: 150px;
+    }
+}
+
+#ResearchPage .container.content {
+    padding: 20px;
+    border-radius: 16px;
+}
+#ResearchPage #researchTopics {
+    margin-bottom: 50px;
+}
+#ResearchPage #researchTopics > div {
+    padding: 20px;
+    border-radius: 6px;
+}
+#ResearchPage #researchTopics .section-title {
+    padding: 0;
+    margin: 0;
+}
+#ResearchPage #researchTopics .current {
+    background-color: var(--foreground);
+}
+#ResearchPage #researchTopics .current * {
+    color: var(--background);
+}
+#ResearchPage #researchTopics > div:not(.current):hover {
+    cursor: pointer;
+    background-color: var(--accent-color);
+    transition: background-color 0.3s ease-in-out;
+}
+#ResearchPage #researchTopics > div:not(.current):active {
+    scale: 0.98;
+    transition: scale 0.1s ease-in-out;
+}
+
+#ResearchPage .container.content .title {
+    padding-block: 10px 30px;
+}
+
+#ResearchPage #researchArticles {
+    padding: 20px;
+    border-radius: 6px;
+    background-color: var(--foreground);
+}
+
+#ResearchPage #researchArticles, 
+#ResearchPage #researchArticles h3,
+#ResearchPage #researchArticles h5 {
+    color: var(--background);
+}
+
+#researchArticles .article img {
+    max-width: 100%;
+    border-radius: 6px;
+    padding: 10px;
+    background-color: white;
+    margin-block: 16px;
+}
+
+#researchArticles .article p {
+    text-align: justify;
+}
+
+#researchArticles .article {
+    margin-block: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#researchArticles .article a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+#researchArticles .article a:hover {
+    color: var(--background);
+    transition: color 0.3s ease-in-out;
+}
+
+#researchArticles .article a:active {
+    color: var(--background);
+    scale: 0.99;
+    transition: scale 0.1s ease-in-out;
+}
+
+#teamPageWrapper .section {
+    padding: 25px 0;
+}
+
+#teamPageWrapper,
+#teamPageWrapper p,
+#teamPageWrapper h5 {
+    color: var(--background);    
+}
+
+#teamPageWrapper h1,
+#teamPageWrapper h2,
+#teamPageWrapper h3,
+#teamPageWrapper h4 {
+    color: var(--primary-color);
+    font-weight: 900;
+}
+
+#teamPageWrapper h5 {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-block: 0.5rem;
+}
+
+#teamPageWrapper .cards {
+    margin-top: 16px;;
+}
+
+#teamPageWrapper .card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#teamPageWrapper .card img {
+    width: 192px;
+    height: 192px;
+    border-radius: 6px;
+    background-color: white;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 10px 0px;
+}
+
+#teamPageWrapper .card img,
+#teamPageWrapper .card .content {
+    margin: 20px;
+}
+
+@media (max-width: 768px) {
+#teamPageWrapper .card img {
+    width: 128px;
+    height: 128px;
+}
+#teamPageWrapper .card {
+    flex-direction: column;
+    align-items: center;
+}
+}
+
+
+#teamPageWrapper.about-page-wrapper .card img {
+    width: 480px;
+    height: 480px;
+}
+
+@media (max-width: 1700px) {
+#teamPageWrapper.about-page-wrapper .card img {
+    width: 360px;
+    height: 360px;
+}
+}
+@media (max-width: 1500px) {
+#teamPageWrapper.about-page-wrapper .card img {
+    width: 244px;
+    height: 244px;
+}
+#teamPageWrapper.about-page-wrapper .card {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+}
+
+#teamPageWrapper.about-page-wrapper {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    width: 50%;
+}
+
+@media (max-width: 1000px) {
+    #teamPageWrapper.about-page-wrapper .card img {
+    width: 200px;
+    height: 200px;
+}
+#teamPageWrapper.about-page-wrapper .text {
+    font-size: 1rem;
+}
+#teamPageWrapper.about-page-wrapper {
+    width: 75%;
+}
+}
+
+
+#teamPageWrapper.about-page-wrapper .content {
+    display: flex;
+    align-items: center;
+}
