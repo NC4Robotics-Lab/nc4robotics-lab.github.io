@@ -1,125 +1,65 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const articles = {
-        "Neuromorphic Computing for Marine Robots": {
-            "SNN-based Visibility Enhancement of Underwater Scenes": {
-                "img": "/assets/images/research/uie_snn.png",
-                "link": "https://arxiv.org/abs/2503.20485",
-                "abstract": "We introduce UIE-SNN, the first spiking neural network (SNN)-based underwater image enhancement (UIE) algorithm to improve the overall visibility of underwater images. UIE-SNN is a 19- layered convolutional spiking encoder-decoder framework with skip connections, directly trained using surrogate gradient-based backpropagation through time (BPTT) strategy. We explore and validate the impact of training datasets on energy reduction, a unique advantage of the UIE-SNN architecture over conventional learning-based architectures, where energy consumption is model-dependent. UIE-SNN optimizes the loss function in latent space representation to reconstruct clear underwater images. Our algorithm demonstrates equivalent performance with its non-spiking counterpart methods in terms of PSNR and structural similarity index (SSIM) at reduced timesteps of 5 and energy consumption of 85%. The algorithm is trained on two publicly available benchmark datasets, UIEB and EUVP, and tested on unseen images from UIEB, EUVP, LSUI, U45, and our custom UIE dataset. Compared with the existing state-of-the-art UIE methods, UIE-SNN achieves an average of 6.5× improvement in energy efficiency.",
-                "contributions": 
-                    [
-                        "Proposed UIE-SNN, the first directly trained convolutional SNN framework for UIE tasks",
-                        "Achieved comparable performance with its non-spiking counterpart (CNN-based) with 85% less energy.",
-                        "Demonstrated average improvement of 6.5× in energy efficiency compared to the existing UIE methods.",
-                        "Analyzed the impact of data representation on energy efficiency in UIE-SNN.",
-                        "Explored how neuronal parameter selection affects UIE-SNN performance."
-                    ]
-            },
-            "Spiking Transformer with Adaptive Threshold Mechanism for Underwater Image Dehazing": {
-                "img": "/assets/images/research/snntrans.png",
-                "link": "https://arxiv.org/abs/2504.11482",
-                "abstract": "We introduce snnTrans-DHZ, the first spiking transformer with learnable threshold based underwater image dehazing algorithm with only 0.56M parameters to improve the visibility of underwater images. sing the temporal dynamics of SNNs, snnTrans-DHZ efficiently processes time-dependent raw image sequences while maintaining low power consumption. The raw underwater images are first converted into time-dependent image sequences by repeatedly passing the static image to a user-defined timestep value. The RGB sequences are then converted into LAB color space representations and processed simultaneously. The architecture integrates three primary modules:(i) K estimator module to extract features from different color space representations, (ii) Background light estimator module to jointly estimate the background light component from the RGB-LAB color space representations, and (iii) soft image reconstruction module to reconstruct the haze-free, visibility-enhanced image. snnTrans-DHZ model is directly trained using surrogate gradient-based backpropagation through time (BPTT) strategy. In this research, a combined loss function is designed and used. Our model is trained and tested on the UIEB and EUVP, the two publicly available benchmark dataset for image dehazing. Our algorithm achieves a PSNR and SSIM of 21.6773 dB and 0.8795 on UIEB dataset, and 23.4562 dB and 0.8439 on EUVP dataset respectively. snnTrans-DHZ algorithm achieves this algorithmic performance with fewer operations (7.42 GSOPs) and lower energy consumption of 0.0151 J compared to existing state-of-the-art image enhancement methods. Compared with the existing state-of-the-art lightest UIE method, our proposed algorithm achieves an average of 3.3× improvement in energy efficiency.",
-                "contributions": [
-                    "Proposed snnTrans-DHZ algorithm, the first spiking transformer with learnable threshold framework for underwater image dehazing with only 0.56M parameters.", 
-                    "Formulated a custom loss function tailored specifically for underwater image dehazing tasks.", 
-                    "Explored the hybrid RGB-LAB color space transformations and its conversion to spike-based representations for the first time for developing a domain-aware haze removal approach.", 
-                    "Demonstrated an improvement of 3.3× to 62.6× in energy efficiency compared to the existing vision transformer-based UIE methods."
-                ]
-            },
-            "Hybrid CNN-SNN based algorithm for multimodal pose estimation of underwater vehicles": {
-                "img": "/assets/images/research/neurovio.png",
-                "link": "https://ieeexplore.ieee.org/document/10979088",
-                "abstract": "We present NeuroVIO, a hybrid end-to-end architecture that integrates convolutional neural networks (CNNs) and spiking neural networks (SNNs) for multimodal visual-inertial odometry in underwater mobile robots. Accurate pose estimation is critical for underwater robotics and exploration. In NeuroVIO, CNNs extract visual features from consecutive image frames, which are transformed into time-dependent sequences. These sequences are then processed using adaptive leaky-integrate-and-fire neurons with learnable thresholds to generate spike representations. Simultaneously, inertial measurements captured between frames are fed to an SNN-based feature extractor. The visual and inertial features are then fused and passed through an LSTM network to capture temporal dynamics, followed by an SNN-based regression head to estimate the relative pose of the vehicle. NeuroVIO leverages both CNNs and SNNs to provide comparable pose estimation accuracy while introducing sparsity in feature representations to reduce computational complexity.",
-                "contributions": [
-                    "Developed an end-to-end trainable model based on the hybrid CNN-SNN framework for multimodal pose estimation in underwater environments.",
-                    "Enable direct optimization of the integrated system by training the hybrid model as a unified framework, simplifying the overall training pipeline.", 
-                    "Utilizes ALIF neurons to convert continuous visual features into sparse spike representations, significantly reducing computational complexity."
-                ]
-            }
-        },
-        "Neuromorphic Computing for Olfaction Sensing Robots": {
-            "SNN Based Odor Classification and Concentration Estimation": {
-                "img": "/assets/images/research/odor_class.jpg",
-                "link": "https://ieeexplore.ieee.org/abstract/document/10611648",
-                "abstract": "This study introduces a hybrid approach for odor classification and quantification in the presence of drift. Our proposed approach employs neuromorphic principles for energy efficient operation along with the probabilistic nature of Bayesian learning for robust outcomes. Our model demonstrates superior performance compared to non-neuromorphic methods. The neuromorphic classification component of this research was initially presented at the IEEE International Conference on Robotics and Automation (ICRA) 2024. Building upon that foundation, this paper expands our previous work by integrating concentration estimation using a spike based regression method and further refining the model’s performance evaluation across various scenarios. Moreover, a robustness analysis of the proposed architecture under adversarial attack in comparison with a non-spiking algorithm is also carried out in this paper. Our work introduces several key innovations aimed at enhancing robustness, accuracy, and energy efficiency in olfactory sensing for autonomous robotics. Our classification model integrates a spike-based convolutional neural network (SCNN) for drift-independent feature extraction, which achieves domain-independent drift compensation. This CNN-driven feature extraction is complemented by a Bayesian classifier, which leverages Kullback-Leibler (KL) divergence to handle non-linear sensor response variability, significantly strengthening classification robustness. For efficient and accurate chemical concentration estimation, we introduce a non-linear SNN regression model that operates independently of chemical categories, streamlining quantification by relying solely on resistance values. We analyze the system’s computation energy requirements to assess its efficiency in comparison to non-spiking approaches. Additionally, we evaluate the model’s resilience against adversarial attacks, specifically using the fast gradient sign method (FGSM), demonstrating enhanced robustness compared to traditional CNNs.",
-                "contributions": []
-            },
-            "Bio Inspired Home Localization": {
-                "img": "/assets/images/research/home_loc.jpg",
-                "link": "https://ieeexplore.ieee.org/document/10979075",
-                "abstract": "In this model, we implement the home localization algorithm proposed earlier for frame-based cameras with conventional neural networks. However, we extend this framework by replacing frame-based images with event-based input and substituting the conventional convolutional neural networks with spiking convolutional neural networks (spiking CNNs). Moreover, the simulation environment is developed in ISAAC Sim on a digital twin of the Khalifa University SAN Campus. The quadrotor model used for localization tasks is adopted from the Pegasus Simulator, ensuring a realistic and dynamic testing ground for our approach. In the proposed system, event-based sensors capture changes in the environment to create spatiotemporal patterns, which are processed using spiking neural networks trained to identify key features and spatial cues within the home. This bio-inspired methodology offers several advantages, including efficient computation, robustness to noise, and adaptability to changing environmental conditions. Simulated environments provide an ideal testing ground for developing and validating the system, allowing controlled experimentation and benchmarking against traditional methods. Through this work, we demonstrate the potential of bioinspired technologies to revolutionize localization systems, paving the way for their adoption in autonomous robots, assistive technologies, and energy-efficient smart home systems.",
-                "contributions": [
-                    "Setting up a simulation environment containing SAN campus digital twin and a quadrotor.",
-                    "Event-Driven Visual Sensing: Our system employs event-based cameras to mimic the asynchronous change driven sensing of insect eyes, offering robustness to changes in lighting and dynamic environments.", 
-                    "Spiking Neural Network for Homing Vector Estimation: We employ an S-CNN to process event-driven data, where the neural architecture mimics the spike-driven computation observed in biological neurons. "
-                ]
-            }
-            // "title": {
-            //     "img": "",
-            //     "link": "",
-            //     "abstract": "",
-            //     "contributions": [
-            //         "",
-            //         "", 
-            //         "", 
-            //         ""
-            //     ]
-            // }
-        },
-        "Neuromorphic Computing for Edge AI Applications": {}
-    } 
-    const cont = document.querySelector('#ResearchPage #researchContent');
-    for (const key in articles) {
-        const d1 = document.createElement('div');
-        d1.classList.add('col');
+    let articles;
+    fetch('./content/json/research.json')
+    .then(response => response.json())
+    .then(data => {
+        articles = data['content'];
+    })
+    .then(() => {
+        const cont = document.querySelector('#ResearchPage #researchContent');
+        for (const key in articles) {
+            const d1 = document.createElement('div');
+            d1.classList.add('col');
 
-        d1.addEventListener('click', (ev) => {
-            cont.querySelectorAll('#researchTopics > div').forEach(div => {
-                div.classList.remove('current');
+            d1.addEventListener('click', (ev) => {
+                cont.querySelectorAll('#researchTopics > div').forEach(div => {
+                    div.classList.remove('current');
+                });
+                ev.currentTarget.classList.add('current');
+
+                cont.querySelector("#researchArticles").innerHTML = "";
+
+                const list = articles[key];
+                for (const article in list) {
+                    const title = article;
+                    const img = list[article].img;
+                    const link = list[article].link;
+                    const abstract = list[article].abstract;
+                    const contributions = list[article].contributions;
+
+                    const articleDiv = document.createElement('div');
+                    articleDiv.classList.add('col');
+
+                    cont.querySelector("#researchArticles").appendChild(articleDiv);
+
+                    const articleContent = `
+                        <div class="article">
+                            <h3>${title}</h3>
+                            ${img ? `<img src="${img}" alt="${title}">` : ''}
+                            <p>${abstract}</p>
+                            <h5>${contributions.length > 0 ? 'Key Contributions:' : ''}</h5>
+                            <ul>
+                                ${contributions.map(contribution => `<li>${contribution}</li>`).join('')}
+                            </ul>
+                            <a href="${link}" target="_blank">Read the related article for more details.</a>
+                        </div>
+                    `;
+                    articleDiv.innerHTML = articleContent;
+                }
+                if (Object.keys(list).length == 0){
+                    cont.querySelector("#researchArticles").innerHTML = "<p>Coming Soon..</p>";
+                }
+
             });
-            ev.currentTarget.classList.add('current');
 
-            cont.querySelector("#researchArticles").innerHTML = "";
+            const h5 = document.createElement('h5');
+            h5.classList.add('section-title');
+            h5.textContent = key;
+            d1.appendChild(h5);
 
-            const list = articles[key];
-            for (const article in list) {
-                const title = article;
-                const img = list[article].img;
-                const link = list[article].link;
-                const abstract = list[article].abstract;
-                const contributions = list[article].contributions;
+            cont.querySelector("#researchTopics").appendChild(d1);
 
-                const articleDiv = document.createElement('div');
-                articleDiv.classList.add('col');
-
-                cont.querySelector("#researchArticles").appendChild(articleDiv);
-
-                const articleContent = `
-                    <div class="article">
-                        <h3>${title}</h3>
-                        ${img ? `<img src="${img}" alt="${title}">` : ''}
-                        <p>${abstract}</p>
-                        <h5>${contributions.length > 0 ? 'Key Contributions:' : ''}</h5>
-                        <ul>
-                            ${contributions.map(contribution => `<li>${contribution}</li>`).join('')}
-                        </ul>
-                        <a href="${link}" target="_blank">Read More</a>
-                    </div>
-                `;
-                articleDiv.innerHTML = articleContent;
-            }
-            if (Object.keys(list).length == 0){
-                cont.querySelector("#researchArticles").innerHTML = "<p>No articles available yet for this topic.</p>";
-            }
-
-        });
-
-        const h5 = document.createElement('h5');
-        h5.classList.add('section-title');
-        h5.textContent = key;
-        d1.appendChild(h5);
-
-        cont.querySelector("#researchTopics").appendChild(d1);
-
-        if (key == "Neuromorphic Computing for Marine Robots") d1.click();
+            if (key == "Neuromorphic Computing for Marine Robots") d1.click();
+        }
     }
-});
+)});
