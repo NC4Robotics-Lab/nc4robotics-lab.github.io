@@ -26,6 +26,10 @@
     gap: 60px;
 }
 
+.brand-two img {
+    max-height: 50px;
+}
+
 .brand-two__right {
     width: fit-content;
     display: flex;
