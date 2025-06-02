@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     articleDiv.classList.add('col');
 
                     cont.querySelector("#researchArticles").appendChild(articleDiv);
+                    let linkContent;
+                    if 
 
                     const articleContent = `
                         <div class="article">
@@ -41,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <ul>
                                 ${contributions.map(contribution => `<li>${contribution}</li>`).join('')}
                             </ul>
-                            <a href="${link}" target="_blank">Read the related article for more details.</a>
+                            ${link ? `<a href="${link}" target="_blank">Read the related article for more details.</a>` : ''}
                         </div>
                     `;
                     articleDiv.innerHTML = articleContent;
