@@ -68,5 +68,12 @@
         }
 
     },
-    "Neuromorphic Computing for Edge AI Applications": {}
+    "Neuromorphic Computing for Edge AI Applications": {
+        "Integration of Neuromorphic Computing with Edge-Based Autonomous Systems": {
+            "img": "/assets/images/research/nc-vla.jpg",
+            "link": "",
+            "abstract": "The aim of this research is to address the integration of neuromorphic computing within autonomous systems to facilitate deployment on energy-efficient platforms. In its initial phase, the study aims to establish an ecosystem of online SNN-driven robots operating on low-power embedded hardware. To realize this objective, targeting autonomous navigation and scene understanding, three primary milestones are currently under investigation. First, the exploration of spiking transformer architectures seeks to develop a novel modular backbone for Vision-Language-Action (VLA) models, which constitute the algorithmic core of the proposed solution. Second, the project outlines a development roadmap for designing, implementing, and evaluating SNN modules on neuromorphic-friendly hardware, with a particular emphasis on FPGA platforms such as the Xilinx Kria K26 System-on-Chip module and Intel’s Loihi 2 neuromorphic processor. Third, a federated learning framework is being considered to provide an efficient, continuous, and secure protocol for on-device model adaptation. This approach minimizes reliance on centralized computational resources and enhances the reliability and adaptability of deployed agents within the envisioned ecosystem. By achieving these milestones, the research will establish the necessary infrastructure to enable energy-efficient, accessible edge-AI solutions, thereby accelerating technological advancement in neuromorphic computing for autonomous applications.",
+            "contributions": []
+        }
+    }
 }}
