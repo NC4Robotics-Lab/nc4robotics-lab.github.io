@@ -31,8 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     articleDiv.classList.add('col');
 
                     cont.querySelector("#researchArticles").appendChild(articleDiv);
-                    let linkContent;
-                    if 
 
                     const articleContent = `
                         <div class="article">
