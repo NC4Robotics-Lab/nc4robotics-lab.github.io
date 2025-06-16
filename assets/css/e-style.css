@@ -273,3 +273,7 @@
     display: flex;
     align-items: center;
 }
+
+.resourceForNow .card a {
+    color: blue;
+}
