@@ -13,7 +13,7 @@
     }
 },
 "content": {
-    "Neuromorphic Computing for Marine Robots": {
+    "Neuromorphic Computing in Marine Environment": {
         "SNN-based Visibility Enhancement of Underwater Scenes": {
             "img": "/assets/images/research/uie_snn.png",
             "link": "https://arxiv.org/abs/2503.20485",
@@ -49,7 +49,7 @@
             ]
         }
     },
-    "Neuromorphic Computing for Olfaction Sensing Robots": {
+    "Neuromorphic Computing in Olfaction Sensing": {
         "SNN Based Odor Classification and Concentration Estimation": {
             "img": "/assets/images/research/odor_class.jpg",
             "link": "https://ieeexplore.ieee.org/abstract/document/10611648",
@@ -68,7 +68,7 @@
         }
 
     },
-    "Neuromorphic Computing for Edge AI Applications": {
+    "Neuromorphic Computing in Edge AI Applications": {
         "Integration of Neuromorphic Computing with Edge-Based Autonomous Systems": {
             "img": "/assets/images/research/nc-vla.jpg",
             "link": "",
