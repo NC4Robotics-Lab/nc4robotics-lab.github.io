@@ -197,9 +197,10 @@
 #teamPageWrapper .card img {
     width: 192px;
     height: 192px;
+    flex-shrink: 0;
     border-radius: 6px;
     background-color: white;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 10px 0px;
 }
